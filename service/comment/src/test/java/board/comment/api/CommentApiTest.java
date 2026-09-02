@@ -106,7 +106,7 @@ public class CommentApiTest {
             System.out.println("comment.getCommentId() = " + comment.getCommentId());
         }
 
-        CommentResponse lastComment = response1.get(response1.size() - 1);
+        CommentResponse lastComment = response1.getLast();
         Long lastParentCommentId = lastComment.getParentCommentId();
         Long lastCommentId = lastComment.getCommentId();
 
