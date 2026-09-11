@@ -44,8 +44,8 @@ public interface CommentRepositoryV2 extends JpaRepository<CommentV2, Long> {
 
     @Query(
             value = "select count(*) from (" +
-                    "   select comment_id from comment_v2 where article_id :articleId limit :limit " +
-                    ")",
+                    "   select comment_id from comment_v2 where article_id = :articleId limit :limit " +
+                    ") t",
             nativeQuery = true
     )
     Long count(
